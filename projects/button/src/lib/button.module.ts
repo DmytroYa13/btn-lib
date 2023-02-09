@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
-import { CstButtonComponent } from './button.component';
+import { CstButtonComponent } from './components/button/button.component';
+import { CstButtonGroupComponent } from './components/button-group/button-group.component';
 
 
 
 @NgModule({
   declarations: [
-    CstButtonComponent
+    CstButtonComponent,
+    CstButtonGroupComponent
   ],
   imports: [
   ],
   exports: [
-    CstButtonComponent
+    CstButtonComponent,
+    CstButtonGroupComponent
   ]
 })
 export class CstButtonModule { }

@@ -1,11 +1,11 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { CstButtonColor } from './types/button-color.type';
-import { CstButtonSize } from './types/button-size.type';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { CstButtonColor } from '../../types/button-color.type';
+import { CstButtonSize } from '../../types/button-size.type';
 
 @Component({
   selector: 'button[cst-btn]',
   template: `<span icon>&#9733;</span><ng-content></ng-content> `,
-  styleUrls: ['./style/index.scss'],
+  styleUrls: ['../../style/index.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     '[class.cst-btn-size-medium]': `cstSize === 'medium' `,
@@ -16,12 +16,8 @@ import { CstButtonSize } from './types/button-size.type';
     '[attr.disabled]': 'disabled || null ',
   },
 })
-export class CstButtonComponent implements OnInit {
+export class CstButtonComponent {
   @Input() cstColor: CstButtonColor = 'basic';
   @Input() cstSize: CstButtonSize = 'medium';
   @Input() disabled: boolean = false;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

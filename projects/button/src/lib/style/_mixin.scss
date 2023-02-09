@@ -1,14 +1,16 @@
 @use "./variables";
 
 @mixin generate-button-size {
-  &.cst-btn-size-medium {
-    font-size: 1rem;
-    padding: 0.8rem 1.2rem;
-  }
+  &.cst-btn-size {
+    &-medium {
+      font-size: 1rem;
+      padding: 0.8rem 1.2rem;
+    }
 
-  &.cst-btn-size-small {
-    font-size: 0.8rem;
-    padding: 0.6rem 1rem;
+    &-small {
+      font-size: 0.8rem;
+      padding: 0.6rem 1rem;
+    }
   }
 }
 
@@ -20,7 +22,7 @@
     background-color: darken($background, 10%);
   }
   &:active {
-    outline: 2px dashed #1A2143;
+    outline: 2px dashed #1a2143;
     outline-offset: 0.2rem;
   }
 
@@ -31,22 +33,39 @@
 }
 
 @mixin generate-filled-button {
-  &.cst-btn-color-basic {
-    @include generate-button-colors(
-      variables.$color-basic,
-      variables.$background-basic
-    );
+  &.cst-btn-color {
+    &-basic {
+      @include generate-button-colors(
+        variables.$color-basic,
+        variables.$background-basic
+      );
+    }
+    &-primary {
+      @include generate-button-colors(
+        variables.$color-primary,
+        variables.$background-primary
+      );
+    }
+    &-secondary {
+      @include generate-button-colors(
+        variables.$color-secondary,
+        variables.$background-secondary
+      );
+    }
   }
-  &.cst-btn-color-primary {
-    @include generate-button-colors(
-      variables.$color-primary,
-      variables.$background-primary
-    );
-  }
-  &.cst-btn-color-secondary {
-    @include generate-button-colors(
-      variables.$color-secondary,
-      variables.$background-secondary
-    );
+}
+
+@mixin generate-button-group-direction {
+  &.cst-btn-group {
+    &-vertical {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-horizontal {
+      display: flex;
+      justify-content: flex-start
+    }
   }
 }
