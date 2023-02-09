@@ -1,0 +1,25 @@
+@use "./variables";
+@use "./mixin";
+
+:host {
+  font-family: sans-serif;
+  box-sizing: border-box;
+  width: auto;
+  font-weight: bold;
+  margin: 0.2rem;
+  display: inline-flex;
+  align-items: center;
+  outline: 0;
+  border: 0;
+  border-radius: 10rem;
+  cursor: pointer;
+  letter-spacing: 0.05rem;
+
+  span[icon] {
+    line-height: 1;
+    margin-right: 0.3rem;
+  }
+
+  @include mixin.generate-button-size;
+  @include mixin.generate-filled-button;
+}
